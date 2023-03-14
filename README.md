@@ -14,6 +14,7 @@ The greatest decrease in losses and the month it occurred
 
 
     ```md
-    ![alt text](assets/images/screenshot.png)
+    ![alt text](2023-03-14.png)
+    
     ```
 
