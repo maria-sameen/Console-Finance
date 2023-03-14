@@ -86,3 +86,52 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+var numberOfMonths = finances.length;
+console.log('Number of months in the dataset: ' + numberOfMonths)
+// Initialize a variable to hold the net total amount
+let netTotal = 0;
+
+// Loop through each item in the finances array
+for (let i = 0; i < finances.length; i++) {
+  // Add the amount to the net total
+  netTotal += finances[i][1];
+}
+
+// Log the net total amount
+console.log(`The net total amount of Profit/Losses over the entire period is ${netTotal}.`);
+
+let total = 0;
+for (let i = 1; i < finances.length; i++) {
+  total += finances[i][1] - finances[i-1][1];
+}
+const averageChange = (total / (finances.length - 1)).toFixed(2);
+console.log(`The average change in Profit/Losses over the entire period is $${averageChange}`);
+
+var maxIncrease = 0;
+var maxIncreaseDate = '';
+var minDecrease = 0;
+var minDecreaseDate = '';
+
+var maxIncrease = 0;
+var maxIncreaseDate = '';
+var minDecrease = 0;
+var minDecreaseDate = '';
+
+for (var i = 1; i < finances.length; i++) {
+  var diff = finances[i][1] - finances[i-1][1];
+  
+  if (diff > maxIncrease) {
+    maxIncrease = diff;
+    maxIncreaseDate = finances[i][0];
+  }
+  
+  if (diff < minDecrease) {
+    minDecrease = diff;
+    minDecreaseDate = finances[i][0];
+  }
+}
+
+console.log('Greatest Increase in Profits:', maxIncreaseDate, '$' + maxIncrease);
+console.log('Greatest Decrease in Profits:', minDecreaseDate, '$' + minDecrease);
+
